@@ -28,7 +28,7 @@ export default function Recipes() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('/api/recipes');
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recipes`);
       const result = await res.json();
       setData(result);
     };

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function Gallery() {
 
-  const res = await fetch("/api/recipes");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recipes`);
   const data = await res.json();
 
   return (
