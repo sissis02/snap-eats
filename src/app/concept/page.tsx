@@ -10,11 +10,13 @@ import styles from './concept.module.scss';
 
 export const metadata: Metadata = {
   title: 'Concept - cuisine facile, rapide et abordable pour tous',
-  description: "Une cuisine simple, rapide et économiques. Des recettes faciles à préparer, avec des produits du quotidien, pour des repas accessibles. Cuisine maligne et saine",
+  description: 'Une cuisine simple, rapide et économiques. Des recettes faciles à préparer, avec des produits du quotidien, pour des repas accessibles. Cuisine maligne et saine',
 };
 
 export default async function Concept() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/concepts`);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+  const res = await fetch(`${baseUrl}/api/concepts`);
   const data = await res.json();
   return (
     <main className={styles.main}>

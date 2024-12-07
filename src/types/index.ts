@@ -1,4 +1,4 @@
-import { IRecipe, IIngredient } from "./recipe.types"
+import { IIngredient } from './recipe.types';
 
 export interface INavProps {
   mobileMenu: boolean,

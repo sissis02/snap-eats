@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link';
 import styles from './notFound.module.scss';
- 
+
 export default function NotFound() {
   return (
     <main className={styles.main}>
@@ -11,8 +12,8 @@ export default function NotFound() {
       <section>
         <h2>Oups, il y a eu un problème !</h2>
         <h3>La page demandée n'a pas été trouvée.</h3>
-        <Link href="/"><button>Page d'accueil</button></Link>
+        <Link href="/"><button type="button">Page d'accueil</button></Link>
       </section>
     </main>
-  )
+  );
 }

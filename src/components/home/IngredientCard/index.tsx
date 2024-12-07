@@ -1,7 +1,8 @@
-import styles from './ingredientCard.module.scss';
+/* eslint-disable @next/next/no-img-element */
 import { IIngredient } from 'types/recipe.types';
+import styles from './ingredientCard.module.scss';
 
-export default function IngredientCard({ingredient}: {ingredient: IIngredient}) {
+export default function IngredientCard({ ingredient }: { ingredient: IIngredient }) {
   return (
     <article className={styles.container}>
       <div>

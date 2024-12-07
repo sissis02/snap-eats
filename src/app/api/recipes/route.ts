@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 const recipes = [
   {
     id: 1,
-    name: 'Salade César', 
+    name: 'Salade César',
     picture: '/pictures/salade-cesar.jpg',
     duration: 15,
     cooking_method: '/cooking_methods/assiette.svg',
@@ -16,7 +16,7 @@ const recipes = [
         img: '/ingredients/tomates-cerise.svg',
         name: 'Tomates cerise',
       },
-            {
+      {
         img: '/ingredients/parmesan.svg',
         name: 'Parmesan',
       },
@@ -39,7 +39,7 @@ const recipes = [
   },
   {
     id: 2,
-    name: 'Original hamburger', 
+    name: 'Original hamburger',
     picture: '/pictures/original-hamburger.jpg',
     duration: 20,
     cooking_method: '/cooking_methods/four.svg',
@@ -52,7 +52,7 @@ const recipes = [
         img: '/ingredients/steak.svg',
         name: '1 steak haché',
       },
-            {
+      {
         img: '/ingredients/salade.svg',
         name: 'Salade',
       },
@@ -80,7 +80,7 @@ const recipes = [
   },
   {
     id: 3,
-    name: 'Linguines à la carbonara', 
+    name: 'Linguines à la carbonara',
     picture: '/pictures/pates-carbonara.jpg',
     duration: 15,
     cooking_method: '/cooking_methods/casserole.svg',
@@ -237,7 +237,7 @@ const recipes = [
     steps: [
       [1, 'Préchauffer votre four à 180° C'],
       [2, 'Faire cuire le steak à cuisson souhaitée'],
-      [3, "Couper le 1/4 de tomate en rondelles"],
+      [3, 'Couper le 1/4 de tomate en rondelles'],
       [4, "Assembler le tout en n'oubliant pas d'ajouter des pickles et une sauce"],
       [5, 'Mettre au four pendant 4 minutes'],
     ],
@@ -491,7 +491,7 @@ const recipes = [
       [1, 'Préchauffer votre four à 180° C'],
       [2, 'Cuire le steak dans une poêle à cuisson souhaitée et le bacon également'],
       [3, "Laver et essorer la salade et couper le 1/4 de tomate et d'oignon rouge en rondelles"],
-      [4, "Une fois le tout cuit, assembler et mettre au four pendant 4 minutes"],
+      [4, 'Une fois le tout cuit, assembler et mettre au four pendant 4 minutes'],
     ],
     categories: ['burgers', 'four', 'plaques'],
   },
@@ -523,7 +523,7 @@ const recipes = [
       [1, "Faire bouillir de l'eau salée et y incorporer les pâtes jusqu'à cuisson al dente"],
       [2, 'Faire revenir la viande hanchée dans une poêle avec les tomates cerise coupées en 2'],
       [3, 'Une fois  le tout cuit, disposer dans une assiettes les pâtes, ensuite la viande'],
-      [4, "Ajouter des feuilles de basilic"],
+      [4, 'Ajouter des feuilles de basilic'],
     ],
     categories: ['pâtes', 'plaques'],
   },
@@ -534,7 +534,7 @@ const recipes = [
     duration: 20,
     cooking_method: '/cooking_methods/assiette.svg',
     ingredients: [
-        {
+      {
         img: '/ingredients/salade.svg',
         name: 'Salade',
       },
@@ -628,7 +628,7 @@ const recipes = [
     steps: [
       [1, "Faire bouillir de l'eau salée et y incorporer les pâtes jusqu'à cuisson al dente"],
       [2, 'Faire chauffer dans une autre casserole la sauce tomate'],
-      [3, "Une fois  le tout cuit et bien chaud, disposer dans une assiettes les pâtes et par-dessus, la sauce tomate"],
+      [3, 'Une fois  le tout cuit et bien chaud, disposer dans une assiettes les pâtes et par-dessus, la sauce tomate'],
       [4, "Parsemer d'emmental râpé et de feuilles de basilic"],
     ],
     categories: ['pâtes', 'casserole'],
@@ -670,7 +670,7 @@ const recipes = [
       },
     ],
     steps: [
-      [1, "Couper la 1/2 tomate et le 1/4 de concombre en rondelles"],
+      [1, 'Couper la 1/2 tomate et le 1/4 de concombre en rondelles'],
       [2, "Couper le jambon en 2 et émincer le 1/4 d'oignon rouge"],
       [3, 'Laver, essorer et couper de la salade'],
       [4, 'Passer les tranches de pain de mie au grille-pain'],
@@ -750,7 +750,7 @@ const recipes = [
       [1, 'Tartiner les tranches de pain de fromage frais'],
       [2, 'Couper la tomate en rondelles et les disposer sur la préparation'],
       [3, 'Ajouter le saumon fumé en chiffonade'],
-      [4, "Ajouter par dessus la coriandre et assaisonner à votre convenance"],
+      [4, 'Ajouter par dessus la coriandre et assaisonner à votre convenance'],
     ],
     categories: ['tartines', 'assiette'],
   },
@@ -778,7 +778,7 @@ const recipes = [
       [1, 'Chauffer votre poêle huilée à feu vif'],
       [2, 'Couper la tomates en quartiers et les ajouter aux oeufs brouillés déjà cuits'],
       [3, 'Incorper les oeufs dans la poêle chaude en les remuant avec un fouet'],
-      [4, 'Disposer le tout dans une assiette et mélanger'], 
+      [4, 'Disposer le tout dans une assiette et mélanger'],
       [5, 'Parsemer de coriandre ciselée et assaisonner à votre convenance'],
     ],
     categories: ['omelettes', 'plaques'],
@@ -862,7 +862,7 @@ const recipes = [
         img: '/ingredients/pain.svg',
         name: '2 tranches de pain',
       },
-          {
+      {
         img: '/ingredients/oeuf-plat.svg',
         name: '2 oeufs',
       },
@@ -943,7 +943,7 @@ const recipes = [
       [2, 'Battre les oeufs dans un bol et rajouter le lait'],
       [3, 'Couper le filet de poulet en morceaux et le faire chauffer'],
       [4, 'Rajouter le mélange liquide dans la poêle pendant 6 minutes en veillant à retourner de face à mi-temps'],
-      [5, "A 2 minutes avant la fin de la cuisson, adjoindre les épinards dans la poêle"]
+      [5, 'A 2 minutes avant la fin de la cuisson, adjoindre les épinards dans la poêle'],
     ],
     categories: ['omelettes', 'plaques'],
   },
@@ -1032,13 +1032,13 @@ const recipes = [
       },
       {
         img: '/ingredients/salade.svg',
-        name: "Salade",
+        name: 'Salade',
       },
     ],
     steps: [
       [1, 'Préchauffer votre four à 180° C'],
       [2, "Empiler 1 tranche de pain de mie, 1 d'emmental, 1 de jambon cru plié en 2, de la salade et 1 tranche de pain de mie"],
-      [3, 'Faire dorer au four pendant 10 minutes'], 
+      [3, 'Faire dorer au four pendant 10 minutes'],
     ],
     categories: ['croques', 'four'],
   },
@@ -1140,7 +1140,7 @@ const recipes = [
       [2, 'Battre les oeufs dans un bol et rajouter le lait'],
       [3, 'Couper les tomates cerise en 2 et la feta en morceaux émiettés'],
       [4, 'Incorporer le mélange liquide la poêle pendant 6 minutes en veillant à retourner de face à mi-temps'],
-      [5, "Servir le tout dans une assiette avec le l'omelette en dessous"]
+      [5, "Servir le tout dans une assiette avec le l'omelette en dessous"],
     ],
     categories: ['omelettes', 'plaques'],
   },
@@ -1243,7 +1243,7 @@ const recipes = [
   },
   {
     id: 38,
-    name: 'Hamburger avec oeuf sur le plat', 
+    name: 'Hamburger avec oeuf sur le plat',
     picture: '/pictures/hamburger-oeuf.jpg',
     duration: 20,
     cooking_method: '/cooking_methods/four.svg',
@@ -1256,7 +1256,7 @@ const recipes = [
         img: '/ingredients/steak.svg',
         name: '1 steak haché',
       },
-            {
+      {
         img: '/ingredients/salade.svg',
         name: 'Salade',
       },
@@ -1331,14 +1331,14 @@ const recipes = [
     steps: [
       [1, 'Faire chauffer votre poêle huilée à feu moyen et y incorporer les oignons émincés'],
       [2, "Faire cuire l'oeuf façon au plat"],
-      [3, "Laver et essorer la salade"],
+      [3, 'Laver et essorer la salade'],
       [4, 'Disposer la préparation dans une assiette'],
     ],
     categories: ['omelettes', 'plaques'],
   },
   {
     id: 41,
-    name: 'Salade de crevettes et poivron', 
+    name: 'Salade de crevettes et poivron',
     picture: '/pictures/salade-crevettes-poivron.jpg',
     duration: 15,
     cooking_method: '/cooking_methods/assiette.svg',
@@ -1441,7 +1441,7 @@ const recipes = [
     ],
     steps: [
       [1, 'Préchauffer votre four à 180° C'],
-      [2, "Faire frire le blanc de poulet pané dans une poêle huilée à feu moyen"],
+      [2, 'Faire frire le blanc de poulet pané dans une poêle huilée à feu moyen'],
       [3, 'Assembler le tout en veillant à bien ajouter la sauce de votre choix'],
       [4, 'Mettre au four pendant 4 minutes'],
     ],
@@ -1464,7 +1464,7 @@ const recipes = [
       },
       {
         img: '/ingredients/poivron.svg',
-        name: '1 poivron'
+        name: '1 poivron',
       },
     ],
     steps: [
@@ -1576,7 +1576,7 @@ const recipes = [
       },
     ],
     steps: [
-      [1, "Couper la 1/2 tomate et le 1/4 de concombre en rondelles"],
+      [1, 'Couper la 1/2 tomate et le 1/4 de concombre en rondelles'],
       [2, "Battre l'oeuf dans un bol et le faire cuire dans une poêle à feu vif"],
       [3, 'Laver, essorer et couper une feuille de salade'],
       [4, 'Passer les tranches de pain de mie au grille-pain et les tartiner de fromage frais'],
@@ -1620,4 +1620,3 @@ const recipes = [
 export async function GET() {
   return NextResponse.json(recipes);
 }
-

@@ -24,7 +24,7 @@ const popularRecipes = [
     picture: '/pictures/pates-parmesan.jpg',
     duration: 20,
   },
-]
+];
 
 export default function PopularRecipesContainer() {
   const router = useRouter();

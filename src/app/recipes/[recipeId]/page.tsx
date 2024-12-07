@@ -6,14 +6,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import Ingredient from '@/components/recipe/Ingredient';
 import Step from '@/components/recipe/Step';
 import { IIngredient, IRecipe } from 'types/recipe.types';
 import styles from './recipe.module.scss';
-import printIcon from '../../../../public/icons/print_icon.svg';
-import pdfIcon from '../../../../public/icons/pdf_icon.svg';
-import mailIcon from '../../../../public/icons/mail_icon.svg';
 
 export default function Recipe() {
   const [data, setData] = useState([]);
@@ -21,8 +17,9 @@ export default function Recipe() {
   const [recipe, setRecipe] = useState<undefined | IRecipe>(undefined);
 
   useEffect(() => {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const fetchData = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recipes`);
+      const res = await fetch(`${baseUrl}/api/recipes`);
       const result = await res.json();
       setData(result);
     };
@@ -43,10 +40,6 @@ export default function Recipe() {
 
   const handleStepsDisplay = () => {
     setStepsDisplay((current) => !current);
-  };
-
-  const handlePrint = () => {
-    window.print();
   };
 
   return (

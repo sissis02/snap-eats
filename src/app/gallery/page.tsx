@@ -8,12 +8,13 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Galerie - photos des recettes de cuisine Snapeats',
-  description: "Galerie : images et photos de recettes de cuisine gourmandes",
+  description: 'Galerie : images et photos de recettes de cuisine gourmandes',
 };
 
 export default async function Gallery() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recipes`);
+  const res = await fetch(`${baseUrl}/api/recipes`);
   const data = await res.json();
 
   return (

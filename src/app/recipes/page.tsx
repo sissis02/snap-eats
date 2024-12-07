@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -27,8 +29,9 @@ export default function Recipes() {
   });
 
   useEffect(() => {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const fetchData = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recipes`);
+      const res = await fetch(`${baseUrl}/api/recipes`);
       const result = await res.json();
       setData(result);
     };
@@ -48,17 +51,13 @@ export default function Recipes() {
     }));
   };
 
-   // Apply filters cumulatively
-   const filteredRecipes = data.filter((recipe : IRecipe) => {
-    const matchesSearch = recipe.ingredients?.some((ingredient: IIngredient) =>
-      ingredient.name?.toLowerCase().includes(inputSearch.toLowerCase())
-    );
+  // Apply filters cumulatively
+  const filteredRecipes = data.filter((recipe : IRecipe) => {
+    const matchesSearch = recipe.ingredients?.some((ingredient: IIngredient) => ingredient.name?.toLowerCase().includes(inputSearch.toLowerCase()));
 
     const activeFilters = Object.keys(filters).filter((key) => filters[key]);
 
-    const matchesCategory = activeFilters.length === 0 || activeFilters.some((filter) =>
-      recipe.categories?.includes(filter)
-    );
+    const matchesCategory = activeFilters.length === 0 || activeFilters.some((filter) => recipe.categories?.includes(filter));
     return matchesSearch && matchesCategory;
   });
   //
@@ -66,7 +65,7 @@ export default function Recipes() {
   // Pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
   const pageSize = 8;
- 
+
   const onPageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -79,62 +78,62 @@ export default function Recipes() {
         <SearchFilter onInput={handleInputSearch} />
         <div>
           <PreFilter
-            key={'salades'}
-            type={'salades'}
+            key="salades"
+            type="salades"
             onClick={() => toggleFilter('salades')}
-            isActive={filters['salades']}
+            isActive={filters.salades}
           />
           <PreFilter
-            key={'croques'}
-            type={'croques'}
+            key="croques"
+            type="croques"
             onClick={() => toggleFilter('croques')}
-            isActive={filters['croques']}
+            isActive={filters.croques}
           />
           <PreFilter
-            key={'burgers'}
-            type={'burgers'}
+            key="burgers"
+            type="burgers"
             onClick={() => toggleFilter('burgers')}
-            isActive={filters['burgers']}
+            isActive={filters.burgers}
           />
           <PreFilter
-            key={'omelettes'}
-            type={'omelettes'}
+            key="omelettes"
+            type="omelettes"
             onClick={() => toggleFilter('omelettes')}
-            isActive={filters['omelettes']}
+            isActive={filters.omelettes}
           />
           <PreFilter
-            key={'pâtes'}
-            type={'pâtes'}
+            key="pâtes"
+            type="pâtes"
             onClick={() => toggleFilter('pâtes')}
             isActive={filters['pâtes']}
           />
           <PreFilter
-            key={'tartines'}
-            type={'tartines'}
+            key="tartines"
+            type="tartines"
             onClick={() => toggleFilter('tartines')}
-            isActive={filters['tartines']}
+            isActive={filters.tartines}
           />
           <PreFilter
-            key={'assiette'}
-            type={'assiette'}
+            key="assiette"
+            type="assiette"
             onClick={() => toggleFilter('assiette')}
-            isActive={filters['assiette']}
+            isActive={filters.assiette}
           />
           <PreFilter
-            key={'four'}
-            type={'four'}
+            key="four"
+            type="four"
             onClick={() => toggleFilter('four')}
-            isActive={filters['four']}
+            isActive={filters.four}
           />
         </div>
       </aside>
-      <section className={styles.paginationContainer} id='top'>
+      <section className={styles.paginationContainer} id="top">
         <section className={styles.cardsContainer}>
           {data && filteredRecipes && paginatedRecipes.map((recipe: IRecipe) => (
-            <Card 
+            <Card
               key={recipe.id}
               recipe={recipe}
-              onClick={() => router.push(`/recipes/${recipe.id}`)}       
+              onClick={() => router.push(`/recipes/${recipe.id}`)}
             />
           ))}
         </section>

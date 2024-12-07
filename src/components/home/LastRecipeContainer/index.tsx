@@ -3,14 +3,13 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { IIngredient } from 'types/recipe.types';
 import IngredientCard from '../IngredientCard';
 import styles from './lastRecipe.module.scss';
-import Ingredient from '@/components/recipe/Ingredient';
-import { IIngredient } from 'types/recipe.types';
 
 const lastRecipe = {
   id: 41,
-  name: 'Salade de crevettes et poivron', 
+  name: 'Salade de crevettes et poivron',
   picture: '/pictures/salade-crevettes-poivron.jpg',
   duration: 15,
   ingredients: [
@@ -31,7 +30,7 @@ const lastRecipe = {
       name: 'Menthe',
     },
   ],
-}
+};
 
 export default function LastRecipeContainer() {
   const router = useRouter();
@@ -46,12 +45,16 @@ export default function LastRecipeContainer() {
           <h4>{lastRecipe.name}</h4>
           <div className={styles.time}>
             <img src="/icons/time_icon.svg" alt="icône horloge noir" />
-            <p>{lastRecipe.duration} min</p>
+            <p>
+              {lastRecipe.duration}
+              {' '}
+              min
+            </p>
           </div>
         </div>
         <div className={styles.ingredients}>
           {lastRecipe.ingredients.map((Ingredient: IIngredient) => (
-            <IngredientCard key={Ingredient.name} ingredient={Ingredient}/>
+            <IngredientCard key={Ingredient.name} ingredient={Ingredient} />
           ))}
         </div>
         <button type="button" onClick={() => router.push(`/recipes/${lastRecipe.id}`)}>Découvrez la recette</button>

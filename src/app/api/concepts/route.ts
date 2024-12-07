@@ -5,13 +5,13 @@ const concepts = [
     id: 1,
     title: 'Des recettes simplifiées et variées',
     image: '/concepts/concept-1.jpg',
-    description: "Parfaits pour les débutants ou les récalcitrants de la cuisine, les plats présentés sont des recettes originales, mais aussi transformées pour le plaisir de chacun.",
+    description: 'Parfaits pour les débutants ou les récalcitrants de la cuisine, les plats présentés sont des recettes originales, mais aussi transformées pour le plaisir de chacun.',
   },
   {
     id: 2,
     title: 'Avec des aliments courants',
     image: '/concepts/concept-2.jpg',
-    description: "Les préparations proposées ne requièrent aucun produit particuler, les ingrédients basiques de la cuisine suffisent pour leur réalisation.",
+    description: 'Les préparations proposées ne requièrent aucun produit particuler, les ingrédients basiques de la cuisine suffisent pour leur réalisation.',
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const concepts = [
     id: 6,
     title: 'Excellentes pour la santé',
     image: '/concepts/concept-6.jpg',
-    description: "Les plats affichés vont séduire les adeptes de la cuisine allégée, mais aussi ceux des repas sains riches en légumes ou encore les personnes qui aiment se faire plaisir, pour leur bien-être mental.",
+    description: 'Les plats affichés vont séduire les adeptes de la cuisine allégée, mais aussi ceux des repas sains riches en légumes ou encore les personnes qui aiment se faire plaisir, pour leur bien-être mental.',
   },
 ];
 

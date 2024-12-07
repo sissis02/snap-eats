@@ -1,8 +1,9 @@
 import { IPagination } from '@/types/index';
 import styles from './pagination.module.scss';
 
-export default function Pagination({items, currentPage, pageSize, onPageChange }: IPagination) {
-
+export default function Pagination({
+  items, currentPage, pageSize, onPageChange,
+}: IPagination) {
   const pagesCount = Math.ceil(items / pageSize);
 
   if (pagesCount === 1) return null;
@@ -15,13 +16,13 @@ export default function Pagination({items, currentPage, pageSize, onPageChange }
         <a
           key={page}
           className={page === currentPage ? styles.pageItemActive : styles.pageItem}
-          href='#top'
+          href="#top"
         >
-          <p onClick={() => onPageChange(page)}>
+          <p onClick={() => onPageChange(page)} aria-hidden="true">
             {page}
           </p>
         </a>
       ))}
     </article>
   );
- }
+}
