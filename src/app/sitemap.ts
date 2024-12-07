@@ -5,12 +5,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   let recipes = [];
 
-  // if (process.env.NODE_ENV === 'production') {
-  //   // Mock des données pour éviter les requêtes pendant la build
-  //   recipes = [{ id: 1 }, { id: 2 }, { id: 3 }]; // Exemple de données statiques
-  // }
-
-  if (process.env.NEXT_PHASE === 'phase-production-build') {
+  if (process.env.NODE_ENV === 'production') {
+    // Mock des données pour éviter les requêtes pendant la build
+    recipes = [{ id: 1 }, { id: 2 }, { id: 3 }]; // Exemple de données statiques
+  } else if (process.env.NEXT_PHASE === 'phase-production-build') {
     console.log('Skipping API calls during the build phase');
     recipes = [{ id: 1 }, { id: 2 }, { id: 3 }];
   } else {
