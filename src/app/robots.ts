@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/legalNotices"]
       }
     ],
-    sitemap: `${process.env.URL}/sitemap.xml`
+    sitemap: '/sitemap.xml'
   }
 }

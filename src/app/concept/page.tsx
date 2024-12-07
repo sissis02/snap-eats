@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Concept() {
-  const res = await fetch(`${process.env.URL}/api/concepts`);
+  const res = await fetch("/api/concepts");
   const data = await res.json();
   return (
     <main className={styles.main}>

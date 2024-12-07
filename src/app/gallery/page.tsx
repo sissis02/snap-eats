@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function Gallery() {
 
-  const res = await fetch(`${process.env.URL}/api/recipes`);
+  const res = await fetch("/api/recipes");
   const data = await res.json();
 
   return (
