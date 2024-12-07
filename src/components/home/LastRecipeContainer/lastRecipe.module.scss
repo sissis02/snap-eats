@@ -1,0 +1,152 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: -176px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: -200px;
+  }
+  @media (min-width: $laptop) {
+    margin-bottom: -270px;
+  }
+  @media (min-width: $laptop-xl) {
+    max-width: $laptop-xl;
+  }
+
+  .imgContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img:first-child {
+      width: 100%;
+      max-width: 1480px;
+      height: 440px;
+      object-fit: cover;
+      opacity: .8;
+      border-radius: 6px;
+
+      @media (min-width: $tablet) {
+        height: 500px;
+      }
+      @media (min-width: $laptop) {
+        height: 610px;
+      }
+      @media (min-width: $laptop-l) {
+        max-width: 1480px;
+        height: 720px;
+      }
+    }
+
+    img:nth-child(2) {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      top: 32px;
+      right: 32px;
+
+      @media (min-width: $tablet) {
+        top: 48px;
+        right: 48px;
+      }
+      @media (min-width: $laptop) {
+        width: 120px;
+        height: 120px;
+        top: 80px;
+        right: 80px;
+      }
+      @media (min-width: $laptop-xl) {
+        width: 140px;
+        height: 140px;
+        top: 80px;
+        right: 250px;
+      }
+    }
+  }
+
+  .ingredientsContainer {
+    background-color: $white-color;
+    width: 275px;
+    height: 404px;
+    padding: 16px;
+    border-radius: $radius-l;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 5px 5px 8px rgba(30, 32, 34, .25);
+    position: relative;
+    top: -200px;
+    
+    @media (min-width: $mobile-m) {
+      left: -20px;
+    }
+    @media (min-width: $mobile-l) {
+      left: -40px;
+    }
+    @media (min-width: $tablet) {
+      width: 330px;
+      height: auto;
+      padding: 24px;
+      gap: 18px;
+      top: -240px;
+      left: -150px;
+    }
+    @media (min-width: $laptop) {
+      width: 410px;
+      top: -330px;
+      left: -220px;
+    }
+    @media (min-width: $laptop-l) {
+      left: -400px;
+    }
+    @media (min-width: $laptop-xl) {
+      left: -480px;
+    }
+
+    .top {
+      align-self: flex-start;
+    }
+
+    .time {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .ingredients {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    
+      @media (min-width: $tablet) {
+        gap: 18px;
+      }
+      @media (min-width: $laptop) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px;
+      }
+    }
+
+    button {
+      @include btn;
+      align-self: flex-end;
+    }
+  }
+}

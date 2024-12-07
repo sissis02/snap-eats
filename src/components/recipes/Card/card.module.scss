@@ -1,0 +1,94 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  width: 200px;
+  height: 276px;
+  border-radius: $radius-l;
+  border: 2px solid $primary-color;
+  background-color: rgba(255, 255, 255, .4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 16px;
+  cursor: pointer;
+  @include cardScale;
+
+  @media (min-width: $tablet) {
+    width: 250px;
+    height: 336px;
+    padding: 24px;
+    gap: 18px;
+  }
+  @media (min-width: $laptop) {
+    width: 290px;
+    height: 396px;
+  }
+  
+
+  img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid $primary-color;
+
+    @media (min-width: $tablet) {
+      width: 150px;
+    height: 150px;
+    }
+    @media (min-width: $laptop) {
+      width: 200px;
+    height: 200px;
+    }
+  }
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    @media (min-width: $tablet) {
+      gap: 18px;
+    }
+
+    h6 {
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+  }
+
+  hr {
+    border: none;
+    background-color: $primary-color;
+    width: 120px;
+    height: 1.5px;
+
+    @media (min-width: $tablet) {
+      width: 140px;
+    }
+  }
+
+  .time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      border: none;
+    }
+
+    img:nth-child(3) {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      border-radius: 0;
+      margin-left: 12px;
+    }
+  } 
+}

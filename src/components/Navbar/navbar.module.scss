@@ -1,0 +1,105 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  width: 100%;
+  max-width: $laptop-xl;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: $tablet) {
+    align-items: flex-end;
+
+    img {
+      display: none;
+    }
+  }
+
+  h1 {
+    @include h1;
+  }
+
+  a {
+    position: relative;
+  }
+
+  small {
+    color: $text-color;
+    position: absolute;
+    top: -10px;
+    right: -40px;
+
+    @media (min-width: $tablet) {
+      font-size: 12px;
+      top: -12px;
+    }
+    @media (min-width: $laptop) {
+      font-size: 14px;
+      right: -46px;
+      top: -14px;
+    }
+  }
+
+  .laptopNav {
+    display: none;
+
+    @media (min-width: $tablet) {
+      display: flex;
+      gap: 46px;
+    }
+    @media (min-width: $laptop) {
+      gap: 64px;
+    }
+    @media (min-width: $laptop-l) {
+      gap: 160px;
+    }
+    @media (min-width: $laptop-xl) {
+      gap: 200px;
+      margin-right: 70px;
+    }
+
+    p {
+      @include navLink;
+      color: $text-color;
+      &:hover {
+        color: $primary-color;
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+}
+
+.mobileNav {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: 3;
+  position: absolute;
+  background-color: rgba(255, 190, 152, .9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 24px;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+  
+  img {
+    align-self: flex-end;
+  }
+
+  p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: $text-color;
+  }
+}
+
+.invisible {
+  display: none;
+}

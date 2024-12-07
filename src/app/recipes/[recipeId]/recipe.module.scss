@@ -1,0 +1,180 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $laptop) {
+    align-items: center;
+  }
+  @media (min-width: $laptop-xl) {
+    max-width: 1750px;
+  }
+
+  header {
+    padding: 0 24px;
+
+    @media (min-width: $tablet) {
+      padding: 0 32px;
+    }
+    @media (min-width: $laptop) {
+      padding: 0 40px;
+      align-self: flex-start;
+    }
+  }
+
+  .content {
+
+    @media (min-width: $laptop) {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: $laptop-l) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 38px;
+    }
+    @media (min-width: $laptop-xl) {
+      justify-content: flex-start;
+      gap: 40px;
+    }
+
+    .presentation {
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    
+      @media (min-width: $tablet) {
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      @media (min-width: $laptop) {
+        gap: 38px;
+        max-width: $tablet;
+      }
+      @media (min-width: $laptop-xl) {
+        gap: 40px;
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        border-radius: $radius-l;
+        box-shadow: 5px 5px 8px rgba(30, 32, 34, .5);
+      }
+    }
+
+    .ingredientsLaptop, .stepsLaptop {
+      display: none;
+
+      @media (min-width: $laptop-l) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 38px;
+      }
+      
+      @media (min-width: $laptop-xl) {
+        gap: 40px;
+      }
+    }
+  }
+
+  .dropedContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+    @media (min-width: $tablet) {
+      gap: 62px;
+      flex-direction: row;
+      justify-content: center;
+    }
+    @media (min-width: $laptop) {
+      gap: 38px;
+      width: $tablet;
+    }
+    @media (min-width: $laptop-l) {
+      display: none;
+    }
+
+    button {
+      @include navLink;
+      background: none;
+      border: none;
+      color: $primary-color;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    h3 {
+      @include peachBorder;
+      align-self: center;
+      margin: 0;
+    }
+
+    .ingredients {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      
+      @media (min-width: $tablet) {
+        gap: 32px;
+      }
+      @media (min-width: $laptop) {
+        gap: 38px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media (min-width: $tablet) {
+          gap: 18px;
+        }
+      }
+    }
+  
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      
+      @media (min-width: $tablet) {
+        gap: 32px;
+      }
+      @media (min-width: $laptop) {
+        gap: 38px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media (min-width: $tablet) {
+          gap: 18px;
+        }
+      }
+    }
+  
+  }
+
+  .returnBtn {
+   text-align: center;
+
+   @media (min-width: $laptop-l) {
+    align-self: flex-end;
+   }
+
+    a, button {
+      @include btn;
+    }
+  }
+}

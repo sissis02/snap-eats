@@ -1,0 +1,54 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.main {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 16px 16px;
+
+  @media (min-width: $tablet) {
+    padding: 0 24px 24px;
+  }
+  @media (min-width: $laptop) {
+    padding: 0 40px 40px;
+  }
+  
+  section {
+    padding: 0;
+    // margin: 0;
+  }
+
+  h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 16px 0 16px;
+    margin: 0;
+
+    @media (min-width: $tablet) {
+      padding: 32px 0 32px;
+    }
+    @media (min-width: $laptop) {
+      padding: 36px 0 36px;
+    }
+  }
+
+  p {
+  }
+  
+  em {
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 4px;
+  }
+  
+  section:nth-child(3), section:nth-child(4) {
+    
+    p {
+      font-weight: 600;
+    }
+    
+    em {
+      display: block;
+      font-weight: 400;
+    }
+  }
+}

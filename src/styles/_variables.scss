@@ -1,0 +1,36 @@
+$large: 16px;
+$regular: 14px;
+$small: 12px;
+
+$primary-color: #FFBE98;
+// primary-color rgba : rgba(255, 190, 152, 1)
+$secondary-color: #1E2022;
+// secondary-color rgba : rgba(30, 32, 34, 1)
+
+$grey-color: #F5F5F5;
+// rgba : rgba(245, 245, 245, 1)
+$white-color: #FFF;
+// rgba : rgba(255, 255, 255, 1)
+
+$text-color: #1E2022;
+
+$linear-gradient: linear-gradient(180deg, $white-color 0%, rgba(255, 190, 152, 30%) 100%);
+
+$mobile-s: 230px;
+$mobile-m: 375px;
+$mobile-l: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+$laptop-l: 1440px;
+$laptop-xl: 1920px;
+$screen-4k: 2560px;
+
+$margin-xs: 5px;
+$margin-s: 10px;
+$margin-sm: 20px;
+$margin-md: 30px;
+$margin-l: 40px;
+$margin-xl: 50px;
+
+$radius-s: 16px;
+$radius-l: 20px;

@@ -1,0 +1,55 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (min-width: $tablet) {
+    gap: 18px;
+  }
+  @media (min-width: $laptop) {
+    gap: 20px;
+  }
+  @media (min-width: $laptop-l) {
+    gap: 22px;
+  }
+  
+  .pageItem {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 32px;
+   height: 32px;
+   border-radius: 6px;
+   color: $text-color;
+   cursor: pointer;
+
+   @media (min-width: $tablet) {
+    width: 40px;
+    height: 40px;
+   }
+  }
+  
+  .pageItemActive {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 32px;
+   height: 32px;
+   border: 1px solid $secondary-color;
+   border-radius: 6px;
+   cursor: pointer;
+   background-color: $text-color;
+   color: $white-color;
+
+    @media (min-width: $tablet) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+ 
+ 

@@ -1,0 +1,26 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    gap: 18px;
+  }
+  @media (min-width: $laptop) {
+    flex-direction: row;
+    gap: 38px;
+  }
+  @media (min-width: $laptop-xl) {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  a {
+    color: $text-color;
+  }
+}

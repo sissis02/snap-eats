@@ -1,0 +1,16 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (min-width: $tablet) {
+    gap: 18px;
+  }
+
+  div {
+    @include ingredientPicto;
+  }
+}

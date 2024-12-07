@@ -1,0 +1,148 @@
+@import '@/styles/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin regularFont {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+@mixin navLink {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+
+  @media (min-width: $laptop) {
+    font-size: 20px;
+  }
+  @media (min-width: $laptop-l) {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+@mixin h1 {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $secondary-color;
+
+  @media (min-width: $tablet) {
+    font-size: 42px;
+  }
+  @media (min-width: $laptop) {
+    font-size: 56px;
+  }
+
+  em {
+    font-style: normal;
+    color: $primary-color;
+  }
+}
+
+@mixin catchphrase {
+  font-family: "Playwrite DK Uloopet", cursive;
+  font-style: italic;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 16px;
+  font-size: 30px;
+
+  @media (min-width: $tablet) {
+    font-size: 46px;
+    margin-bottom: 40px;
+  }
+  @media (min-width: $laptop) {
+    font-size: 58px;
+    margin-bottom: 32px;
+  }
+}
+
+@mixin btn {
+  width: 180px;
+  height: 45px;
+  background-color: $secondary-color;
+  color: $white-color;
+  outline: none;
+  border: none;
+  border-radius: $radius-s;
+  cursor: pointer;
+  @include regularFont();
+  letter-spacing: .4px;
+
+  @media (min-width: $laptop) {
+    width: 200px;
+    height: 50px;
+  }
+
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+@mixin peachBorder {
+  text-align: center;
+  border: 2.5px solid $primary-color;
+  border-radius: $radius-s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  @media (min-width: $tablet) {
+    padding: 18px;
+  }
+  @media (min-width: $laptop) {
+    padding: 20px;
+  }
+}
+
+@mixin ingredientPicto {
+  background-color: rgba(255, 190, 152, .4);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: $tablet) {
+      width: 60px;
+      height: 60px;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+
+      @media (min-width: $tablet) {
+        width: 25px;
+        height: 25px;
+      }
+    }
+}
+
+@mixin cardScale {
+  &:hover {
+    animation: scale .5s forwards;
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+      box-shadow: 5px 5px 8px rgba(30, 32, 34, .5);
+    }
+  }
+}

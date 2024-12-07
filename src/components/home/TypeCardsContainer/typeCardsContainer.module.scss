@@ -1,0 +1,68 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+
+  h3 {
+    text-align: center;
+    height: 100px;
+    border-radius: $radius-s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    @media (min-width: $tablet) {
+      height: 120px;
+    }
+    @media (min-width: $laptop) {
+      height: 100px;
+      align-self: flex-start;
+    }
+  }
+
+  .cardsContainer {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: $radius-l;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    
+    @media (min-width: $tablet) {
+      width: 510px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 32px;
+      gap: 32px;
+    }
+    @media (min-width: $laptop) {
+      width: 770px;
+      padding: 38px;
+      gap: 38px;
+    }
+    @media (min-width: $laptop-xl) {
+      width: auto;
+      padding: 40px;
+      gap: 40px;
+    }
+  }
+
+  aside {
+    margin: 0;
+    
+    @media (min-width: $laptop) {
+      align-self: flex-end;
+      padding-right: 0;
+    }
+  }
+  button {
+    @include btn;
+  }
+}

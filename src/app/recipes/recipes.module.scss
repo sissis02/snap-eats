@@ -1,0 +1,98 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $laptop-xl) {
+    max-width: 1480px;
+  }
+
+  aside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 0;
+    
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    @media (min-width: $laptop) {
+      max-width: 1230px;
+      gap: 38px;
+    }
+    @media (min-width: $laptop-xl) {
+      max-width: 1480px;
+      gap: 40px;
+    }
+
+    div {
+      max-width: 800px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+
+      @media (min-width: $tablet) {
+        justify-content: flex-start;
+        gap: 18px;
+      }
+      @media (min-width: $laptop) {
+        gap: 20px;
+      }
+      @media (min-width: $laptop-l) {
+        gap: 22px;
+      }
+    }
+  }
+
+  .paginationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    
+    @media (min-width: $tablet) {
+      gap: 32px;
+    }
+    @media (min-width: $laptop) {
+      gap: 38px;
+    }
+    @media (min-width: $laptop-xl) {
+      gap: 40px;
+    }
+
+    .cardsContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 0;
+ 
+      @media (min-width: $tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      @media (min-width: $laptop) {
+        gap: 38px;
+      }
+      @media (min-width: $laptop-xl) {
+        gap: 40px;
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

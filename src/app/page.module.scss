@@ -1,0 +1,28 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    padding: 0 24px 24px;
+
+    @media (min-width: $tablet) {
+      padding: 0 32px 32px;
+    }
+    @media (min-width: $laptop) {
+      padding: 0 40px 80px;
+    }
+  }
+
+  h2 {
+    @include catchphrase;
+  }
+}

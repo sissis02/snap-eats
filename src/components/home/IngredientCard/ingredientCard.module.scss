@@ -1,0 +1,40 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (min-width: $tablet) {
+    gap: 18px;
+  }
+  @media (min-width: $laptop) {
+    width: 140px;
+    height: 150px;
+    background-color: $grey-color;
+    border-radius: $radius-l;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  div {
+    @include ingredientPicto;
+  }
+
+  p {
+    background-color: $white-color;
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-l;
+    border: 2px solid $grey-color;
+
+    @media (min-width: $tablet) {
+      width: 165px;
+      height: 45px;
+    }
+  }
+}

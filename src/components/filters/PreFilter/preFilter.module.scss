@@ -1,0 +1,43 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.filter {
+  width: 110px;
+  height: 45px;
+  outline: none;
+  @include regularFont;
+  color: rgba(255, 190, 152, .8);
+  border-radius: $radius-s;
+  border: 2px solid $primary-color;
+  background-color: transparent;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $white-color;
+  }
+
+  @media (min-width: $laptop) {
+    width: 120px;
+    height: 50px;
+  }
+}
+
+.active {
+  width: 110px;
+  height: 45px;
+  outline: none;
+  @include regularFont;
+  color: $white-color;
+  border-radius: $radius-s;
+  border: 2px solid $primary-color;
+  background-color: $primary-color;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  @media (min-width: $laptop) {
+    width: 120px;
+    height: 50px;
+  }
+}

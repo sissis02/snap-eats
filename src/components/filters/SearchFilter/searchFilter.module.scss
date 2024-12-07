@@ -1,0 +1,32 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.input {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: 45px;
+  border: 2px solid $primary-color;
+  border-radius: $radius-s;
+  padding-left: 20px;
+  outline: none;
+  caret-color: $text-color;
+  @include regularFont;
+  font-size: 16px;
+  background-image: url('/icons/magnifying_glass_icon.svg');
+  background-repeat: no-repeat;
+  background-position: center right 16px;
+
+  &::placeholder {
+    @include regularFont;
+    color: rgba(255, 190, 152, .5);
+  }
+
+  &:hover, &:focus {
+    box-shadow: 2px 2px 8px rgba(30, 32, 34, .25);
+  }
+
+  @media (min-width: $laptop) {
+    height: 50px;
+  }
+}

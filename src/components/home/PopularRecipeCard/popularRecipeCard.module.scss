@@ -1,0 +1,51 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  width: 282px;
+  height: 410px;
+  padding: 16px;
+  border-radius: $radius-l;
+  background-color: rgba(255, 255, 255, .4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 5px 5px 8px rgba(30, 32, 34, .25);
+  cursor: pointer;
+  @include cardScale;
+  
+  @media (min-width: $tablet) {
+    width: 348px;
+    height: 480px;
+    padding: 24px;
+    gap: 18px;
+  }
+  @media (min-width: $laptop) {
+    height: 495px;
+  }
+  
+  img {
+    width: 250px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: $radius-l;
+
+    @media (min-width: $tablet) {
+      width: 300px;
+      height: 330px;
+    }
+  }
+
+  .time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
