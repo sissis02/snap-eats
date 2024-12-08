@@ -18,7 +18,7 @@ export default function Concept() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('/api/cpncepts');
+      const res = await fetch('/api/concepts');
       const result = await res.json();
       setData(result);
     };
