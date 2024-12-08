@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from 'next';
 import LastRecipeContainer from '@/components/home/LastRecipeContainer';
 import PopularRecipesContainer from '@/components/home/PopularRecipeContainer';
@@ -5,8 +6,8 @@ import TypeCardsContainer from '@/components/home/TypeCardsContainer';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {
-  title: 'Accueil - Présentation du site de recettes de cuisine Snapeats',
-  description: 'Site de recettes de cuisine : la nouvelle recette, les dernières recettes les plus populaires du moment et les types de plats à découvrir, apprendre et déguster',
+  title: 'Snapeats - Site de recettes de cuisine',
+  description: 'Une cuisine simple, rapide et économiques.',
 };
 
 export default function Home() {
@@ -15,8 +16,15 @@ export default function Home() {
       <header>
         <h2>Des recettes délicieusement simples pour libérer le chef qui est en vous&nbsp;!</h2>
         <p>
-          Rapides, savoureuses et abordables - Découvrez vos nouvelles
-          recettes de tous les jours avec SnapEats.
+          Bienvenue sur Snapeats 😊
+          À la recherche de préparations culinaires rapides, savoureuses et abordables ?
+        </p>
+        <p>
+          La cuisine accessible, maligne et saine c'est par ici 🙃
+        </p>
+        <p>
+          Le concept : vous aider à trouver des plats et cuisiner en un rien de temps grâce
+          à des recettes faciles à préparer et avec des produits du quotidien.
         </p>
       </header>
       <LastRecipeContainer />
