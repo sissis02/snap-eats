@@ -8,10 +8,12 @@ export default function LegalNotices() {
         <h3>Propriétaire du site</h3>
         <p>
           Nom du site :
+          {' '}
           <em>Snapeats</em>
         </p>
         <p>
           Contact :
+          {' '}
           <em>sissis1993@gmail.com</em>
         </p>
       </section>
@@ -19,10 +21,12 @@ export default function LegalNotices() {
         <h3>Informations sur l'hébergeur</h3>
         <p>
           Nom de l'hébergeur :
+          {' '}
           <em>Vercel Inc.</em>
         </p>
         <p>
           Adresse complète :
+          {' '}
           <em>340 S Lemon Ave #4133 Walnut, CA 91789 USA</em>
         </p>
       </section>
