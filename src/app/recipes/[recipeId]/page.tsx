@@ -17,9 +17,8 @@ export default function Recipe() {
   const [recipe, setRecipe] = useState<undefined | IRecipe>(undefined);
 
   useEffect(() => {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const fetchData = async () => {
-      const res = await fetch(`${baseUrl}/api/recipes`);
+      const res = await fetch('/api/recipes');
       const result = await res.json();
       setData(result);
     };

@@ -6,7 +6,7 @@ import styles from './concept.module.scss';
 
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 60s.
-// export const revalidate = 60;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Concept - cuisine facile, rapide et abordable pour tous',
@@ -14,9 +14,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Concept() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-
-  const res = await fetch(`${baseUrl}/api/concepts`);
+  if (!process.env.NEXT_PUBLIC_BASE_URL) {
+    return null;
+  }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/concepts`);
   const data = await res.json();
   return (
     <main className={styles.main}>

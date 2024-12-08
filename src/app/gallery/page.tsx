@@ -12,9 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Gallery() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-
-  const res = await fetch(`${baseUrl}/api/recipes`);
+  if (!process.env.NEXT_PUBLIC_BASE_URL) {
+    return null;
+  }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/recipes`);
   const data = await res.json();
 
   return (
