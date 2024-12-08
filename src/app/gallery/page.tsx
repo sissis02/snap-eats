@@ -1,35 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
-import type { Metadata } from 'next';
+
+'use client';
+
+// import type { Metadata } from 'next';
+import { useEffect, useState } from 'react';
 import styles from './gallery.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-// Next.js will invalidate the cache when a
-// request comes in, at most once every 60s.
-export const revalidate = 60;
+// export const metadata: Metadata = {
+//   title: 'Galerie - photos des recettes de cuisine Snapeats',
+//   description: 'Galerie : images et photos de recettes de cuisine gourmandes',
+// };
 
-export const metadata: Metadata = {
-  title: 'Galerie - photos des recettes de cuisine Snapeats',
-  description: 'Galerie : images et photos de recettes de cuisine gourmandes',
-};
+export default function Gallery() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('/api/recipes');
+      const result = await res.json();
+      setData(result);
+    };
 
-export default async function Gallery() {
-  // if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
-  //   return null;
-  // }
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recipes`);
-  // if (res.ok) {
-  //   throw new Error('Error while getting lists of recipes');
-  // }
-  // const data = await res.json();
-  let data = [];
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/recipes`);
-    if (!res.ok) throw new Error('Failed to fetch data');
-    data = await res.json();
-  } catch (error) {
-    console.error('Error fetching recipes:', error);
-  }
+    fetchData();
+  }, []);
+
   return (
     <main className={styles.main}>
       <h5 className={styles.food}>Food</h5>
