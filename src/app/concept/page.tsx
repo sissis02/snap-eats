@@ -1,16 +1,18 @@
 'use client';
 
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Card from '@/components/concept/Card';
 import { IConcept } from 'types/concept.types';
 import styles from './concept.module.scss';
 
-export const metadata: Metadata = {
-  title: 'Concept - cuisine facile, rapide et abordable pour tous',
-  description: 'Une cuisine simple, rapide et économiques. Des recettes faciles à préparer, avec des produits du quotidien, pour des repas accessibles. Cuisine maligne et saine',
-};
+// export const metadata: Metadata = {
+//   title: 'Concept - cuisine facile, rapide et abordable pour tous',
+//   description: 'Une cuisine simple, rapide et économiques. Des recettes faciles
+// à préparer, avec des produits du quotidien, pour des repas accessibles.
+// Cuisine maligne et saine',
+// };
 
 export default function Concept() {
   const [data, setData] = useState([]);
