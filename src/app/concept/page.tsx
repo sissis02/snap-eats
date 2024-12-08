@@ -8,10 +8,10 @@ import styles from './concept.module.scss';
 
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 60s.
-// export const revalidate = 60;
+export const revalidate = 60;
 
 export const getStaticProps = (async () => {
-  const res = await fetch('/api/concepts');
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/recipes`);
   const data = await res.json();
   return { props: { data } };
 }) satisfies GetStaticProps<{
