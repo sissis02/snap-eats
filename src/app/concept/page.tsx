@@ -1,4 +1,4 @@
-import type { Metadata, InferGetStaticPropsType, GetStaticProps } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Card from '@/components/concept/Card';
 import { IConcept } from 'types/concept.types';
@@ -10,20 +10,12 @@ import styles from './concept.module.scss';
 // request comes in, at most once every 60s.
 export const revalidate = 60;
 
-export const getStaticProps = (async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/recipes`);
-  const data = await res.json();
-  return { props: { data } };
-}) satisfies GetStaticProps<{
-  data: IConcept[],
-}>;
-
 export const metadata: Metadata = {
   title: 'Concept - cuisine facile, rapide et abordable pour tous',
   description: 'Une cuisine simple, rapide et économiques. Des recettes faciles à préparer, avec des produits du quotidien, pour des repas accessibles. Cuisine maligne et saine',
 };
 
-export default function Concept({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default async function Concept() {
   // if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
   //   return null;
   // }
@@ -37,6 +29,16 @@ export default function Concept({ data }: InferGetStaticPropsType<typeof getStat
   // } catch (error) {
   //   console.error('Error fetching concepts:', error);
   // }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/recipes`, {
+    next: { revalidate: 60 }, // Assure la régénération ISR
+  });
+
+  if (!res.ok) {
+    console.error('Failed to fetch data');
+  }
+
+  const data: IConcept[] = await res.json();
+
   return (
     <main className={styles.main}>
       <section className={styles.cardsContainer}>
