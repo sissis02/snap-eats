@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Une cuisine simple, rapide et économiques. Des recettes faciles à préparer, avec des produits du quotidien, pour des repas accessibles. Cuisine maligne et saine',
 };
 
-export default async function Concept({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Concept({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
   // if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
   //   return null;
   // }
