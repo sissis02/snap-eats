@@ -29,13 +29,18 @@ export default async function Concept() {
   // } catch (error) {
   //   console.error('Error fetching concepts:', error);
   // }
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/concepts`);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/concepts`, {
+      next: { revalidate: 60 },
+    });
+    console.log('Fetched data:', res);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+      console.log('Fetched data:', res);
+    }
 
-  if (!res.ok) {
-    console.error('Failed to fetch data');
-  }
-
-  const data: IConcept[] = await res.json();
+    const data: IConcept[] = await res.json();
+    console.log('Fetched data:', data);
 
   return (
     <main className={styles.main}>
