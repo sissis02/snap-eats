@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 60s.
-export const revalidate = 60;
+// export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Concept - cuisine facile, rapide et abordable pour tous',
@@ -29,7 +29,7 @@ export default async function Concept() {
   // } catch (error) {
   //   console.error('Error fetching concepts:', error);
   // }
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/concepts`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/concepts`, {
     next: { revalidate: 60 }, // Assure la régénération ISR
   });
 
