@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-page-custom-font */
 'use client';
 
 import { useState } from 'react';
 // import type { Metadata } from 'next';
+import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import '@/styles/globals.scss';
@@ -23,6 +25,11 @@ export default function RootLayout({
   };
   return (
     <html lang="fr" id={mobileMenu ? 'scrollOff' : ''}>
+      <Head>
+        <title>SnapEats</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+      </Head>
       <body>
         <Navbar mobileMenu={mobileMenu} handleDisplayMobileMenu={handleDisplayMobileMenu} />
         {children}
