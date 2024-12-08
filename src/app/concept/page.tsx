@@ -23,7 +23,7 @@ export default async function Concept() {
   // const data = await res.json();
   let data = [];
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/concepts`);
+    const res = await fetch('/api/concepts');
     if (!res.ok) throw new Error('Failed to fetch data');
     data = await res.json();
   } catch (error) {
