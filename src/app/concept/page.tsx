@@ -4,7 +4,7 @@ import Card from '@/components/concept/Card';
 import { IConcept } from 'types/concept.types';
 import styles from './concept.module.scss';
 
-// export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 60s.
@@ -29,7 +29,7 @@ export default async function Concept() {
   // } catch (error) {
   //   console.error('Error fetching concepts:', error);
   // }
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/recipes`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/concepts`, {
     next: { revalidate: 60 }, // Assure la régénération ISR
   });
 
