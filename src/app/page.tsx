@@ -18,15 +18,12 @@ export default function Home() {
         <p>
           Bienvenue sur Snapeats 😊
         </p>
-        <br />
         <p>
           À la recherche de préparations culinaires rapides, savoureuses et abordables ?
         </p>
-        <br />
         <p>
           La cuisine accessible, maligne et saine c'est par ici 🙃
         </p>
-        <br />
         <p>
           Le concept : vous aider à trouver des plats et cuisiner en un rien de temps grâce
           à des recettes faciles à préparer et avec des produits du quotidien.

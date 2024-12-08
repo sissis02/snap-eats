@@ -25,4 +25,8 @@
   h2 {
     @include catchphrase;
   }
+
+  p {
+    margin-bottom: 4px;
+  }
 }
