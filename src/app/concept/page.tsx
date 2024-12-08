@@ -37,7 +37,7 @@ export default async function Concept() {
     if (!res.ok) {
       throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
       console.log('Fetched data:', res);
-    }
+    };
 
     const data: IConcept[] = await res.json();
     console.log('Fetched data:', data);
