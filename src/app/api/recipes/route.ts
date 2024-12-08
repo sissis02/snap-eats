@@ -1044,7 +1044,7 @@ const recipes = [
   },
   {
     id: 32,
-    name: 'Tartines de fromage frais et oeufs sur le plat',
+    name: "Tartines d'oeufs sur le plat",
     picture: '/pictures/tartines-oeufsplats.jpg',
     duration: 15,
     cooking_method: '/cooking_methods/casserole.svg',
