@@ -7,7 +7,6 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import 'app.css';
 import '@/styles/globals.scss';
 
 // export const metadata: Metadata = {
