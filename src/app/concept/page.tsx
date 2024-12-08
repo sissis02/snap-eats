@@ -1,34 +1,42 @@
-import type { Metadata } from 'next';
+import type { Metadata, InferGetStaticPropsType, GetStaticProps } from 'next';
 import Link from 'next/link';
 import Card from '@/components/concept/Card';
 import { IConcept } from 'types/concept.types';
 import styles from './concept.module.scss';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 60s.
-export const revalidate = 60;
+// export const revalidate = 60;
+
+export const getStaticProps = (async () => {
+  const res = await fetch('/api/concepts');
+  const data = await res.json();
+  return { props: { data } };
+}) satisfies GetStaticProps<{
+  data: IConcept[],
+}>;
 
 export const metadata: Metadata = {
   title: 'Concept - cuisine facile, rapide et abordable pour tous',
   description: 'Une cuisine simple, rapide et économiques. Des recettes faciles à préparer, avec des produits du quotidien, pour des repas accessibles. Cuisine maligne et saine',
 };
 
-export default async function Concept() {
+export default async function Concept({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
   // if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
   //   return null;
   // }
   // const res = await fetch('/api/concepts');
   // const data = await res.json();
-  let data = [];
-  try {
-    const res = await fetch('/api/concepts');
-    if (!res.ok) throw new Error('Failed to fetch data');
-    data = await res.json();
-  } catch (error) {
-    console.error('Error fetching concepts:', error);
-  }
+  // let data = [];
+  // try {
+  //   const res = await fetch('/api/concepts');
+  //   if (!res.ok) throw new Error('Failed to fetch data');
+  //   data = await res.json();
+  // } catch (error) {
+  //   console.error('Error fetching concepts:', error);
+  // }
   return (
     <main className={styles.main}>
       <section className={styles.cardsContainer}>
