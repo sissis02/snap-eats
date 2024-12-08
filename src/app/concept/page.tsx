@@ -1,25 +1,28 @@
+'use client';
+
 import type { Metadata } from 'next';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Card from '@/components/concept/Card';
 import { IConcept } from 'types/concept.types';
 import styles from './concept.module.scss';
-
-export const dynamic = 'force-dynamic';
-
-// Next.js will invalidate the cache when a
-// request comes in, at most once every 60s.
-// export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Concept - cuisine facile, rapide et abordable pour tous',
   description: 'Une cuisine simple, rapide et économiques. Des recettes faciles à préparer, avec des produits du quotidien, pour des repas accessibles. Cuisine maligne et saine',
 };
 
-export default async function Concept() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/concepts`, {
-    next: { revalidate: 60 },
-  });
-  const data = await res.json();
+export default function Concept() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('/api/cpncepts');
+      const result = await res.json();
+      setData(result);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <main className={styles.main}>
