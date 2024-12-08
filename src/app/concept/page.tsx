@@ -16,10 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Concept() {
-  if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
-    return null;
-  }
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/concepts`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/concepts`, {
     next: { revalidate: 60 },
   });
   const data = await res.json();
