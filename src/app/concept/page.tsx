@@ -29,9 +29,7 @@ export default async function Concept() {
   // } catch (error) {
   //   console.error('Error fetching concepts:', error);
   // }
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/concepts`, {
-    next: { revalidate: 60 }, // Assure la régénération ISR
-  });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/concepts`);
 
   if (!res.ok) {
     console.error('Failed to fetch data');
