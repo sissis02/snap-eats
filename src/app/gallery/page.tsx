@@ -16,6 +16,9 @@ export default async function Gallery() {
     return null;
   }
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recipes`);
+  if (res.ok) {
+    throw new Error('Error while getting lists of recipes');
+  }
   const data = await res.json();
 
   return (
