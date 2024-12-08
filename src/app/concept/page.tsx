@@ -16,31 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Concept() {
-  // if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
-  //   return null;
-  // }
-  // const res = await fetch('/api/concepts');
-  // const data = await res.json();
-  // let data = [];
-  // try {
-  //   const res = await fetch('/api/concepts');
-  //   if (!res.ok) throw new Error('Failed to fetch data');
-  //   data = await res.json();
-  // } catch (error) {
-  //   console.error('Error fetching concepts:', error);
-  // }
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/concepts`, {
-      next: { revalidate: 60 },
-    });
-    console.log('Fetched data:', res);
-    if (!res.ok) {
-      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
-      console.log('Fetched data:', res);
-    };
-
-    const data: IConcept[] = await res.json();
-    console.log('Fetched data:', data);
+  if (!process.env.NEXT_PUBLIC_API_BASE_URL) {
+    return null;
+  }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || ''}/api/concepts`, {
+    next: { revalidate: 60 },
+  });
+  const data = await res.json();
 
   return (
     <main className={styles.main}>
@@ -54,4 +36,4 @@ export default async function Concept() {
       </aside>
     </main>
   );
-};
+}
