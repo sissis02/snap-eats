@@ -17,8 +17,10 @@ export default function Pagination({
           key={page}
           className={page === currentPage ? styles.pageItemActive : styles.pageItem}
           href="#top"
+          onClick={() => onPageChange(page)}
+          aria-hidden="true"
         >
-          <p onClick={() => onPageChange(page)} aria-hidden="true">
+          <p>
             {page}
           </p>
         </a>
