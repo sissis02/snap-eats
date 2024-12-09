@@ -1,8 +1,6 @@
 @import '@/styles/variables.scss';
 @import '@/styles/mixins.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -18,7 +16,7 @@ body, html {
   font-size: $regular;
   font-weight: 400;
   color: $text-color;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: var(--roboto), sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +66,7 @@ section, aside {
 }
 
 h2 {
-  font-family: "Playwrite DK Uloopet", cursive;
+  font-family: var(--playwrite), cursive;
   font-weight: 500;
   font-size: 24px;
   margin-bottom: 16px;
@@ -86,7 +84,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Playwrite DK Uloopet", cursive;
+  font-family: var(--playwrite), cursive;
   font-weight: 400;
   font-size: 20px;
   // margin-top: 24px;
@@ -105,7 +103,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: var(--roboto), sans-serif;
   font-weight: 600;
   font-size: 16px;
   
@@ -118,7 +116,7 @@ h4 {
 }
 
 h5 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: var(--roboto), sans-serif;
   font-weight: 600;
   font-size: 16px;
   text-align: center;
@@ -132,7 +130,7 @@ h5 {
 }
 
 h6 {
-  font-family: "Playwrite DK Uloopet", cursive;
+  font-family: var(--playwrite), cursive;
   font-weight: 400;
   font-size: 12px;
   text-align: center;
